@@ -45,7 +45,7 @@
     "jest": "^26.5.0",
     "lint-staged": "^10.4.0",
     "miragejs": "^0.1.41",
-    "prettier": "^2.1.2",
+    "prettier": "^2.2.1",
     "vue-jest": "^3.0.4"
   }
 }
