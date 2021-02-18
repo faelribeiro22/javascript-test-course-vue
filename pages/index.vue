@@ -21,6 +21,7 @@
 <script>
 import ProductCard from '@/components/ProductCard'
 import Search from '@/components/Search'
+
 export default {
   components: { ProductCard, Search },
   data() {
