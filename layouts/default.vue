@@ -32,6 +32,7 @@
           </div>
           <div class="flex items-center justify-end w-full">
             <button
+              data-testid="toggle-button"
               class="text-gray-600 focus:outline-none mx-4 sm:mx-0"
               @click="toggleCart"
             >
@@ -97,7 +98,7 @@
         </nav>
       </div>
     </header>
-    <cart :is-open="isCartOpen" @close="toggleCart" />
+    <cart :is-open="isCartOpen" :products="products" @close="toggleCart" />
     <nuxt />
     <footer class="bg-gray-200">
       <div
@@ -114,16 +115,24 @@
 
 <script>
 import Cart from '@/components/Cart'
+
 export default {
   components: { Cart },
-  data() {
-    return {
-      isCartOpen: false,
-    }
+  computed: {
+    isCartOpen() {
+      return this.$cart.getState().open
+    },
+    products() {
+      return this.$cart.getState().items
+    },
   },
   methods: {
     toggleCart() {
-      this.isCartOpen = !this.isCartOpen
+      if (this.$cart.getState().open) {
+        this.$cart.close()
+      } else {
+        this.$cart.open()
+      }
     },
   },
 }
