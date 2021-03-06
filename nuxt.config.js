@@ -10,6 +10,8 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
+  mode: process.env.NODE_ENV === 'production' ? 'universal' : 'spa',
+
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
 

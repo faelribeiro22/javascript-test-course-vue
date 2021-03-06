@@ -21,7 +21,7 @@ describe('ProductList - integration', () => {
     jest.clearAllMocks()
   })
 
-  const getProducts = async (quantity = 10, overrides = []) => {
+  const getProducts = (quantity = 10, overrides = []) => {
     let overrideList = []
 
     if (overrides.length > 0) {

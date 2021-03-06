@@ -10,6 +10,10 @@
     "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint": "yarn lint:js",
     "test": "jest",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "test:e2e": "start-server-and-test dev 3000 cypress:open",
+    "test:e2e:headless": "start-server-and-test dev 3000 cypress:run",
     "test:watch": "jest --watchAll",
     "test:coverage": "jest --coverage"
   },
@@ -36,8 +40,10 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^26.5.0",
+    "cypress": "^6.5.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-cypress": "^2.11.2",
     "eslint-plugin-nuxt": "^2.0.0",
     "eslint-plugin-prettier": "^3.1.4",
     "faker": "^5.4.0",
@@ -46,6 +52,7 @@
     "lint-staged": "^10.5.4",
     "miragejs": "^0.1.41",
     "prettier": "^2.2.1",
+    "start-server-and-test": "^1.12.0",
     "vue-jest": "^3.0.4"
   }
 }

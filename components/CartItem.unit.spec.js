@@ -42,7 +42,7 @@ describe('CartItem', () => {
     expect(wrapper.vm).toBeDefined()
   })
 
-  it('should display product info', async () => {
+  it('should display product info', () => {
     const {
       wrapper,
       product: { title, price },
@@ -92,10 +92,9 @@ describe('CartItem', () => {
     expect(quantity.text()).toContain('0')
   })
 
-  it('should display a button to remove item from cart', async () => {
-    const { wrapper, cartManager } = mountCartItem()
+  it('should display a button to remove item from cart', () => {
+    const { wrapper } = mountCartItem()
     const button = wrapper.find('[data-testid="remove-button"]')
-    // const spy = jest.spyOn(cartManager, 'removeProduct')
 
     expect(button.exists()).toBe(true)
   })
