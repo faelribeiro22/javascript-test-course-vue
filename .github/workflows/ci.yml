@@ -49,3 +49,6 @@ jobs:
 
       - name: Run tests 🧪
         run: yarn test
+
+      - name: Run tests e2e 🧪
+        run: yarn test:e2e:headless
