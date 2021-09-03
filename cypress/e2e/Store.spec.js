@@ -14,13 +14,6 @@ context('Sore', () => {
     server.shutdown()
   })
 
-  it('should display ', () => {
-    cy.visit('/')
-
-    g('body').contains('Brand')
-    g('body').contains('Wrist Watch')
-  })
-
   context('Store > Shopping Cart', () => {
     const quantity = 10
 
@@ -30,6 +23,13 @@ context('Sore', () => {
     })
     it('should not display shopping cart when page first loads', () => {
       gid('shopping-cart').should('have.class', 'hidden')
+    })
+
+    it('should display ', () => {
+      cy.visit('/')
+
+      g('body').contains('Brand')
+      g('body').contains('Wrist Watch')
     })
 
     it('should toogle shopping cart visibility when button is clicked', () => {
